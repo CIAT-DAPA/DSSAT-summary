@@ -5,7 +5,7 @@
 <artifactId>DSSAT-summary</artifactId>
 <packaging>jar</packaging>
 <version>1.0</version>
-<name>DSSAT-summary</name>
+<name>DSSAT-summary-water</name>
 <url>https://github.com/danipilze/DSSAT-summary</url>
 	
 	<properties>
@@ -41,7 +41,7 @@
 	</dependencies>
 	
 		<build>
-		<finalName>DSSAT-summary</finalName>
+		<finalName>${name}</finalName>
 		<plugins>
 
 			<!-- Set a JDK compiler level -->

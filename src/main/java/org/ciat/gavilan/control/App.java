@@ -36,7 +36,6 @@ public class App {
 		outputs.mkdir();
 
 		OverviewWorker owrk;
-		SeriesWorker swrk;
 		RunConfig rc = new RunConfig();
 
 		log.fine("work started");
@@ -50,17 +49,6 @@ public class App {
 		if (overview) {
 			owrk = rc.getOverviewWorker();
 			owrk.work();
-		}
-
-		boolean summary = true;
-		try {
-			summary = App.prop.getProperty("output.summary.csv").contains("Y") || App.prop.getProperty("output.summary.json").contains("Y") || App.prop.getProperty("output.eval.json").contains("Y");
-		} catch (Exception e) {
-			App.log.warning("A problem occurred in outputs configuration in " + config.getName());
-		}
-		if (summary) {
-			swrk = rc.getSeriesWorker();
-			swrk.work();
 		}
 
 		log.fine("work finished");

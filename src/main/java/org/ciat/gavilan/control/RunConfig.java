@@ -30,9 +30,7 @@ public class RunConfig {
 		return new OverviewWorker(run);
 	}
 
-	public SeriesWorker getSeriesWorker() {
-		return new SeriesWorker(run);
-	}
+
 	
 	
 
