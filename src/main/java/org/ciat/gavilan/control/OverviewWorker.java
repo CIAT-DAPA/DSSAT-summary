@@ -46,7 +46,7 @@ public class OverviewWorker {
 				new PrintWriter(CSV)); /* BufferedWriter JSONwriter = new BufferedWriter(new PrintWriter(JSON)) */) {
 
 			/* Building the header */
-			String head = SummaryRun.CANDIDATE_LABEL + SummaryRun.COLUMN_SEPARATOR + "RUN" + SummaryRun.COLUMN_SEPARATOR + SummaryRun.TREATMENT_LABEL + SummaryRun.COLUMN_SEPARATOR;
+			String head = SummaryRun.CANDIDATE_LABEL + SummaryRun.COLUMN_SEPARATOR + SummaryRun.TREATMENT_LABEL + SummaryRun.COLUMN_SEPARATOR + SummaryRun.TREATMENT_LABEL + SummaryRun.COLUMN_SEPARATOR;
 
 			for (String var : cropNSoilLables) {
 				outputValues.put(var, "");
@@ -185,11 +185,11 @@ public class OverviewWorker {
 
 					for (String var : cropNSoilLables) {
 						if (line.contains(var)) { // if contains the string that corresponds to the variable
-							outputValues.put(var, line.substring(7, 12)); // get value from file
+							outputValues.put(var, line.substring(54, 60)); // get value from file
 						}
 					}
-					// to detect the end of the treatment run
-					if (line.contains("----------------------------------------------------------------------------------------------------------------------------------------------------------------")) {
+					// to detect the end of the section
+					if (line.contains("*MAIN GROWTH AND DEVELOPMENT VARIABLES")) {
 						flag = fileSection.END;
 						for (String key : outputValues.keySet()) {
 							cadena += outputValues.get(key) + SummaryRun.COLUMN_SEPARATOR;

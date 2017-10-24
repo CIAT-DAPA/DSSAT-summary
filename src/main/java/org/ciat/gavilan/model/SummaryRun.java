@@ -9,8 +9,9 @@ public class SummaryRun {
 
 	public static final String COLUMN_SEPARATOR = "\t";
 	public static final String PATH_SEPARATOR = "\\";
-	public static final String CANDIDATE_LABEL = "run";
+	public static final String CANDIDATE_LABEL = "candidate";
 	public static final String DATE_LABEL = "date";
+	public static final String RUN_LABEL = "run";
 	public static final String TREATMENT_LABEL = "treatment";
 	public static final String MEASURED_PREFIX = "meas.";
 	public static final String SIMULATED_PREFIX = "out.";
